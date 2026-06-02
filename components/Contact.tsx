@@ -114,7 +114,7 @@ export default function Contact() {
               <span className="flex h-12 w-12 items-center justify-center rounded-full border border-bid/40 bg-bid/10 text-bid">
                 <Check className="h-6 w-6" />
               </span>
-              <h3 className="mt-5 text-xl font-semibold text-ink">Message ready to send</h3>
+              <h3 className="mt-5 text-xl font-semibold text-ink">Message sent</h3>
               <p className="mt-2 max-w-sm text-sm text-muted">
                 {ENDPOINT
                   ? "Thanks — your message is on its way. I'll get back to you shortly."
