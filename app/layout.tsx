@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { grotesk, mono } from "@/lib/fonts";
 import { profile } from "@/lib/data";
 import "./globals.css";
@@ -61,6 +62,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
