@@ -8,7 +8,7 @@ export const profile = {
   companyUrl: "https://www.linkedin.com/company/zanskar-research/",
   location: "Bangalore, India",
   tagline:
-    "I build the systems that match orders in microseconds — order management, execution algos, and real-time risk for live Indian markets.",
+    "I build the order management systems behind live Indian markets — order lifecycle, execution algos, and real-time risk, engineered for low latency.",
   summary:
     "Analyst at Zanskar Research, where I lead development of Sentinel OMS — the firm's order management system. My work spans the full order lifecycle: state-machine-driven order flows, parent–child workflows, execution algorithms, real-time risk (RMS) validation, and mark-to-market accounting for low-latency trading. SEBI NISM-certified in Equity, Common, and Commodity Derivatives.",
   email: "souvikmukherjee150@gmail.com",
@@ -18,7 +18,7 @@ export const profile = {
     github: "https://github.com/souvik150",
     linkedin: "https://linkedin.com/in/souvik150",
   },
-  stackline: ["Go", "C++20", "gRPC", "NATS JetStream", "epoll", "Low-Latency"],
+  stackline: ["Go", "C++20", "Low-Latency", "Lock-free", "gRPC", "Trading Systems"],
 };
 
 export type Metric = {
