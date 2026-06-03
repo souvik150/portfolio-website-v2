@@ -2,7 +2,7 @@
 
 export const profile = {
   name: "Souvik Mukherjee",
-  role: "Quant & Low-Latency Systems Engineer",
+  role: "Low-Latency Engineer",
   title: "Analyst Software Engineer",
   company: "Zanskar Tech",
   companyUrl: "https://www.linkedin.com/company/zanskar-research/",
