@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
 
         <p className="font-mono text-xs text-faint">
-          © {new Date().getFullYear()} — built with Next.js
+          © {new Date().getFullYear()} · built with Next.js
         </p>
       </div>
     </footer>

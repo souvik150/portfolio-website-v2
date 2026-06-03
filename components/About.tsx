@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 const focus = [
   {
     title: "Order lifecycle",
-    body: "State-machine-driven flows, parent–child workflows, and execution algos — from gRPC ingestion to exchange acknowledgement.",
+    body: "State-machine-driven flows, parent-child workflows, and execution algos, from gRPC ingestion to exchange acknowledgement.",
   },
   {
     title: "Real-time risk",
@@ -28,7 +28,7 @@ export default function About() {
             {profile.summary}
           </p>
           <p className="mt-6 leading-relaxed text-faint">
-            I care about systems that stay correct under pressure — where a missed
+            I care about systems that stay correct under pressure, where a missed
             response or a stale risk check has real consequences. That bias toward
             determinism, observability, and graceful recovery shows up in everything
             I build, from production trading infrastructure to side projects in C++.

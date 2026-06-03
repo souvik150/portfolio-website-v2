@@ -9,7 +9,7 @@ const url = "https://souvikmukherjee.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: {
-    default: `${profile.name} — ${profile.role}`,
+    default: `${profile.name} · ${profile.role}`,
     template: `%s · ${profile.name}`,
   },
   description: profile.tagline,
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url,
-    title: `${profile.name} — ${profile.role}`,
+    title: `${profile.name} · ${profile.role}`,
     description: profile.tagline,
     siteName: profile.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — ${profile.role}`,
+    title: `${profile.name} · ${profile.role}`,
     description: profile.tagline,
   },
   robots: { index: true, follow: true },

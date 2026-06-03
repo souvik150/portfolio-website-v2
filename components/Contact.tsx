@@ -117,7 +117,7 @@ export default function Contact() {
               <h3 className="mt-5 text-xl font-semibold text-ink">Message sent</h3>
               <p className="mt-2 max-w-sm text-sm text-muted">
                 {ENDPOINT
-                  ? "Thanks — your message is on its way. I'll get back to you shortly."
+                  ? "Thanks, your message is on its way. I'll get back to you shortly."
                   : "Your mail client should have opened. If it didn't, email me directly at " +
                     profile.email + "."}
               </p>

@@ -378,7 +378,7 @@ export default function TradeGame() {
             ) : (
               <>
                 <label className="mono-label mb-2 mt-4 block text-faint" htmlFor="predict">
-                  Predicted close — closer = bigger payout (up to 10×)
+                  Predicted close · closer = bigger payout (up to 10×)
                 </label>
                 <input
                   id="predict"
@@ -402,7 +402,7 @@ export default function TradeGame() {
 
             {broke && (
               <p className="mt-3 text-center font-mono text-xs text-ask">
-                Bankrupt — reset to play again.
+                Bankrupt. Reset to play again.
               </p>
             )}
           </div>
@@ -557,7 +557,7 @@ function ResultCard({
         disabled={broke}
         className="mt-5 w-full rounded-lg bg-accent py-3 text-sm font-semibold text-base transition-all hover:-translate-y-0.5 disabled:opacity-40"
       >
-        {broke ? "Out of funds — reset below" : "Next round"}
+        {broke ? "Out of funds, reset below" : "Next round"}
       </button>
     </div>
   );

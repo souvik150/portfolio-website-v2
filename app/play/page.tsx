@@ -4,7 +4,7 @@ import Cursor from "@/components/Cursor";
 import TradeGame from "@/components/play/TradeGame";
 
 export const metadata: Metadata = {
-  title: "Play — Market Game",
+  title: "Play · Market Game",
   description:
     "A free play-money market game: take leveraged long/short positions or predict the close on a simulated order flow, then check your P/L.",
 };
@@ -46,7 +46,7 @@ export default function PlayPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-muted">
             A simulated instrument that never stops moving. Go long or short with leverage, or
-            call exactly where the next candle closes. Every round settles live — then check your
+            call exactly where the next candle closes. Every round settles live, then check your
             P/L. Pure play money, no sign-up.
           </p>
         </div>

@@ -121,7 +121,7 @@ export default function Hero() {
         >
           <OrderBook />
           <p className="mt-3 text-center font-mono text-[11px] text-faint">
-            simulated depth — the kind of feed Sentinel OMS &amp; my matching engine drive
+            simulated depth · the kind of feed Sentinel OMS &amp; my matching engine drive
           </p>
         </motion.div>
       </div>

@@ -59,7 +59,7 @@ export default function PlayCTA() {
               </h2>
               <p className="mt-4 max-w-md leading-relaxed text-muted">
                 Take leveraged long/short positions or call the exact close on a simulated
-                market — settled candle by candle, live. It&apos;s the kind of feed my OMS and
+                market, settled candle by candle, live. It&apos;s the kind of feed my OMS and
                 matching engine drive, turned into a game. No sign-up, no real risk.
               </p>
 
@@ -112,7 +112,7 @@ export default function PlayCTA() {
                 <GameChart candles={candles} live={null} entry={null} predicted={null} />
               </div>
               <p className="px-3 pb-2 pt-1 text-center font-mono text-[10px] text-faint">
-                auto-playing preview — your move on the real thing
+                auto-playing preview · your move on the real thing
               </p>
             </div>
           </div>
