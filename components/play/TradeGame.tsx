@@ -242,7 +242,7 @@ export default function TradeGame() {
   return (
     <div className="grid gap-5 lg:grid-cols-[1.55fr_1fr]">
       {/* ===== Chart panel ===== */}
-      <div className="panel relative overflow-hidden">
+      <div className="panel relative flex flex-col overflow-hidden">
         <div className="flex items-center justify-between border-b border-line px-4 py-3">
           <div className="flex items-center gap-2.5">
             <span className="relative flex h-2 w-2">
@@ -262,7 +262,7 @@ export default function TradeGame() {
           </span>
         </div>
 
-        <div className="h-[320px] w-full px-1 sm:h-[420px]">
+        <div className="min-h-[320px] w-full flex-1 px-1 pb-1">
           <GameChart candles={candles} live={live} entry={entry} predicted={target} />
         </div>
 

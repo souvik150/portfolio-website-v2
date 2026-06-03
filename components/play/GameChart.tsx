@@ -33,6 +33,7 @@ export default function GameChart({ candles, live, entry, predicted }: GameChart
     const ctx = canvas?.getContext("2d");
     if (!canvas || !ctx) return;
 
+    const render = () => {
     const settled = candles.slice(-VISIBLE);
     const view: Candle[] = live ? [...settled, live] : settled;
     if (view.length === 0) return;
@@ -155,6 +156,12 @@ export default function GameChart({ candles, live, entry, predicted }: GameChart
       ctx.font = "600 10px ui-monospace, 'JetBrains Mono', monospace";
       ctx.fillText(live.c.toFixed(2), plotW + 6, y);
     }
+    };
+
+    render();
+    const ro = new ResizeObserver(() => render());
+    ro.observe(canvas);
+    return () => ro.disconnect();
   }, [candles, live, entry, predicted]);
 
   return <canvas ref={canvasRef} className="h-full w-full" aria-hidden />;
