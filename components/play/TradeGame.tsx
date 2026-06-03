@@ -70,6 +70,12 @@ export default function TradeGame() {
 
   const idRef = useRef(0);
   const rafRef = useRef(0);
+  const candlesRef = useRef<Candle[]>([]);
+
+  // Always keep a fresh handle on the latest candles for event handlers.
+  useEffect(() => {
+    candlesRef.current = candles;
+  }, [candles]);
 
   // Seed the chart on the client only (keeps SSR deterministic / mismatch-free).
   useEffect(() => {
@@ -77,6 +83,19 @@ export default function TradeGame() {
   }, []);
 
   useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
+
+  // Ambient market: the feed keeps printing candles whenever a round isn't
+  // mid-reveal, so the chart stays alive even before/between bets.
+  useEffect(() => {
+    if (reduce || phase === "running") return;
+    const id = window.setInterval(() => {
+      setCandles((prev) => {
+        if (prev.length === 0) return prev;
+        return [...prev, nextCandle(prev[prev.length - 1].c)].slice(-200);
+      });
+    }, 1600);
+    return () => window.clearInterval(id);
+  }, [phase, reduce]);
 
   const lastClose = candles.length ? candles[candles.length - 1].c : 100;
   const stake = Math.max(0, Math.floor(Number(stakeStr) || 0));
@@ -91,8 +110,12 @@ export default function TradeGame() {
 
   const settle = useCallback(
     (final: Candle, dir: 1 | -1, st: number, lv: number, m: Mode, pred: number) => {
-      setLive(final);
+      // Commit the revealed candle to the feed and drop the forming overlay so
+      // the ambient market can resume cleanly (no duplicated last candle).
       setCandles((prev) => [...prev, final].slice(-200));
+      setLive(null);
+      setEntry(null);
+      setTarget(null);
 
       const move = pctMove(final);
       let pnl = 0;
@@ -143,7 +166,11 @@ export default function TradeGame() {
       const m = mode;
       const pred = predicted;
 
-      const final = nextCandle(lastClose);
+      // Read the live feed's latest close so the round continues from the
+      // current price, not a stale render value.
+      const feed = candlesRef.current;
+      const lc = feed.length ? feed[feed.length - 1].c : lastClose;
+      const final = nextCandle(lc);
       setEntry(final.o);
       setTarget(m === "predict" ? pred : null);
       setResult(null);
