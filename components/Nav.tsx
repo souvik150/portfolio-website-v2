@@ -46,6 +46,15 @@ export default function Nav() {
             </a>
           ))}
           <a
+            href="/play"
+            className="group inline-flex items-center gap-1.5 rounded-lg border border-accent/40 bg-accent/10 px-3 py-1.5 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
+          >
+            Play
+            <span aria-hidden className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              ↗
+            </span>
+          </a>
+          <a
             href={profile.resume}
             download
             className="group inline-flex items-center gap-2 rounded-lg border border-line-strong bg-surface-2 px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
@@ -93,6 +102,14 @@ export default function Nav() {
               {item.label}
             </a>
           ))}
+          <a
+            href="/play"
+            onClick={() => setOpen(false)}
+            className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-accent/40 bg-accent/10 px-3 py-3 text-sm font-medium text-accent"
+          >
+            Play the market game
+            <span aria-hidden>↗</span>
+          </a>
           <a
             href={profile.resume}
             download

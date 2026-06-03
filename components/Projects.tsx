@@ -1,6 +1,7 @@
 import { projects, type Project } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
 import { ArrowUpRight } from "./icons";
 
 export default function Projects() {
@@ -70,7 +71,11 @@ function LinkChip({ project }: { project: Project }) {
 
 function FeatureCard({ project }: { project: Project }) {
   return (
-    <article className="panel group relative overflow-hidden p-6 transition-colors hover:border-accent/40 sm:p-8">
+    <TiltCard
+      as="article"
+      tilt={4}
+      className="panel group relative overflow-hidden p-6 transition-colors hover:border-accent/40 sm:p-8"
+    >
       <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-accent/[0.06] blur-3xl transition-opacity group-hover:opacity-100" />
       <div className="relative grid gap-8 lg:grid-cols-[1fr_1fr]">
         <div>
@@ -99,13 +104,16 @@ function FeatureCard({ project }: { project: Project }) {
           ))}
         </ul>
       </div>
-    </article>
+    </TiltCard>
   );
 }
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="panel group flex h-full flex-col p-5 transition-all hover:-translate-y-1 hover:border-line-strong">
+    <TiltCard
+      as="article"
+      className="panel group relative flex h-full flex-col p-5 transition-colors hover:border-line-strong"
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
           <h3 className="text-lg font-semibold text-ink transition-colors group-hover:text-accent">
@@ -129,6 +137,6 @@ function ProjectCard({ project }: { project: Project }) {
         <Tags tags={project.tags.slice(0, 3)} />
         <LinkChip project={project} />
       </div>
-    </article>
+    </TiltCard>
   );
 }

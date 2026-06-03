@@ -3,6 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { profile } from "@/lib/data";
 import OrderBook from "./OrderBook";
+import DecodeText from "./DecodeText";
+import Magnetic from "./Magnetic";
 import { ArrowUpRight, Download, Github, Linkedin } from "./icons";
 
 export default function Hero() {
@@ -41,9 +43,8 @@ export default function Hero() {
             variants={item}
             className="mt-6 text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl"
           >
-            Souvik
-            <br />
-            Mukherjee<span className="text-accent">.</span>
+            <DecodeText as="span" text={"Souvik\nMukherjee"} delay={260} duration={1100} />
+            <span className="text-accent">.</span>
           </motion.h1>
 
           <motion.p
@@ -65,40 +66,48 @@ export default function Hero() {
           </motion.div>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-base transition-transform hover:-translate-y-0.5"
-            >
-              Get in touch
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <a
-              href={profile.resume}
-              download
-              className="inline-flex items-center gap-2 rounded-lg border border-line-strong bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-accent hover:text-accent"
-            >
-              <Download className="h-4 w-4" />
-              Résumé
-            </a>
+            <Magnetic strength={28}>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-base shadow-glow transition-transform hover:-translate-y-0.5"
+              >
+                Get in touch
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </Magnetic>
+            <Magnetic strength={24}>
+              <a
+                href={profile.resume}
+                download
+                className="inline-flex items-center gap-2 rounded-lg border border-line-strong bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-accent hover:text-accent"
+              >
+                <Download className="h-4 w-4" />
+                Résumé
+              </a>
+            </Magnetic>
             <div className="ml-1 flex items-center gap-1">
-              <a
-                href={profile.socials.github}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="GitHub"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-ink"
-              >
-                <Github className="h-[18px] w-[18px]" />
-              </a>
-              <a
-                href={profile.socials.linkedin}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-ink"
-              >
-                <Linkedin className="h-[18px] w-[18px]" />
-              </a>
+              <Magnetic strength={18}>
+                <a
+                  href={profile.socials.github}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="GitHub"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-ink"
+                >
+                  <Github className="h-[18px] w-[18px]" />
+                </a>
+              </Magnetic>
+              <Magnetic strength={18}>
+                <a
+                  href={profile.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="LinkedIn"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-ink"
+                >
+                  <Linkedin className="h-[18px] w-[18px]" />
+                </a>
+              </Magnetic>
             </div>
           </motion.div>
         </motion.div>

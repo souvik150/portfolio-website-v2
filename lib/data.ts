@@ -4,13 +4,13 @@ export const profile = {
   name: "Souvik Mukherjee",
   role: "Quant & Low-Latency Systems Engineer",
   title: "Analyst Software Engineer",
-  company: "Zanskar Research",
+  company: "Zanskar",
   companyUrl: "https://www.linkedin.com/company/zanskar-research/",
   location: "Bangalore, India",
   tagline:
     "I build the order management systems behind live Indian markets — order lifecycle, execution algos, and real-time risk, engineered for low latency.",
   summary:
-    "Analyst at Zanskar Research, where I lead development of Sentinel OMS — the firm's order management system. My work spans the full order lifecycle: state-machine-driven order flows, parent–child workflows, execution algorithms, real-time risk (RMS) validation, and mark-to-market accounting for low-latency trading. SEBI NISM-certified in Equity, Common, and Commodity Derivatives.",
+    "Analyst at Zanskar, where I lead development of Sentinel OMS — the firm's order management system. My work spans the full order lifecycle: state-machine-driven order flows, parent–child workflows, execution algorithms, real-time risk (RMS) validation, and mark-to-market accounting for low-latency trading. SEBI NISM-certified in Equity, Common, and Commodity Derivatives.",
   email: "souvikmukherjee150@gmail.com",
   phone: "+91 7330787625",
   resume: "/Souvik_Mukherjee_Resume.pdf",
@@ -49,7 +49,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     role: "Analyst Software Engineer",
-    company: "Zanskar Research",
+    company: "Zanskar",
     location: "Bangalore, India",
     period: "May 2025 — Present",
     current: true,
@@ -63,7 +63,7 @@ export const experience: Experience[] = [
   },
   {
     role: "Backend Intern",
-    company: "Zanskar Research",
+    company: "Zanskar",
     location: "Bangalore, India",
     period: "Dec 2024 — May 2025",
     points: [
@@ -95,7 +95,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Sentinel OMS v2",
-    kind: "Production · Zanskar Research",
+    kind: "Production · Zanskar",
     blurb:
       "A two-layer order management system in Go powering a live securities brokerage across Indian markets.",
     highlights: [

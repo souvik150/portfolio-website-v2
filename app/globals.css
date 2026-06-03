@@ -88,6 +88,17 @@
   }
 }
 
+/* Hide the native cursor while the custom crosshair is active (desktop only). */
+.cursor-none,
+.cursor-none * {
+  cursor: none !important;
+}
+
+/* Tint glyphs while a DecodeText block is still resolving. */
+[data-decoding="true"] {
+  color: theme("colors.accent");
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
